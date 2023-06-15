@@ -1,0 +1,111 @@
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: calc(12.5% - 20px); /* Ajusta el tamaño de cada imagen teniendo en cuenta el margen */
+  margin-bottom: 20px;
+  margin-right: 20px; 
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.image-container img {
+  width: 100%;
+  scroll-snap-align: start;
+  cursor: pointer;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.image-container span {
+  color: #333;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+  padding: 10px;
+}
+
+.images img:last-child {
+  margin-right: 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 20px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color:white
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 70%;
+  max-height: 70%;
+}
+
+.close {
+  color: #fff;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#caption {
+  color: #ccc;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Media Query para ajustar el diseño en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .image-container {
+    flex-basis: calc(25% - 20px); /* Ajusta el tamaño de las imágenes en pantallas más pequeñas */
+  }
+}
